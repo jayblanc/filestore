@@ -17,7 +17,12 @@
 		<version.ejb.plugin>2.5.1</version.ejb.plugin>
 		<version.war.plugin>2.6</version.war.plugin>
 		<version.junit>4.12</version.junit>
+		<version.jmock>2.8.1</version.jmock>
 		<version.javaee>7.0</version.javaee>
+		<version.shrinkwrap>1.2.2</version.shrinkwrap>
+		<version.shrinkwrap-resolver>2.1.1</version.shrinkwrap-resolver>
+		<version.arquillian>1.1.9.Final</version.arquillian>
+		<version.wildfly-arquillian>8.2.1.Final</version.wildfly-arquillian>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<maven.compiler.source>1.7</maven.compiler.source>
 	</properties>
@@ -32,7 +37,7 @@
 		<developerConnection>scm:git:git@bitbucket.org:jayblanc/filestore.git</developerConnection>
 		<url>https://bitbucket.org/jayblanc/filestore</url>
 	</scm>
-	
+
 	<repositories>
 		<repository>
 			<id>filestore-maven-repository</id>
@@ -108,9 +113,41 @@
 				<version>${version.junit}</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.jmock</groupId>
+				<artifactId>jmock-junit4</artifactId>
+				<version>${version.jmock}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.shrinkwrap</groupId>
+				<artifactId>shrinkwrap-bom</artifactId>
+				<version>${version.shrinkwrap}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.shrinkwrap.resolver</groupId>
+				<artifactId>shrinkwrap-resolver-bom</artifactId>
+				<version>${version.shrinkwrap-resolver}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>${version.arquillian}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>wildfly-arquillian-container-managed</artifactId>
+				<version>${version.wildfly-arquillian}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>filestore-maven-repository</id>

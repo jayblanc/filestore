@@ -9,5 +9,7 @@ public interface BinaryStoreService {
 	public String put(InputStream is) throws BinaryStoreServiceException;
 	
 	public InputStream get(String key) throws BinaryStoreServiceException, BinaryStreamNotFoundException;
+	
+	public void delete(String key) throws BinaryStoreServiceException, BinaryStreamNotFoundException;
 
 }

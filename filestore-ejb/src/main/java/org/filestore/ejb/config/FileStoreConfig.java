@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 
 public class FileStoreConfig {
 	
+	private static final String BASE_DOWNLOAD_URL = "http://localhost:8080/filestore/files/";
 	private static Path home = null;
 	static {
 		if ( System.getenv("FILESTORE_HOME") != null ) {
@@ -18,6 +19,10 @@ public class FileStoreConfig {
 	
 	public static Path getHome() {
 		return home;
+	}
+	
+	public static String getDownloadBaseUrl() {
+		return BASE_DOWNLOAD_URL;
 	}
 
 }
